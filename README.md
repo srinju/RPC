@@ -24,6 +24,11 @@ rpc call under the hood>>>
 
 ![alt text](image.png)
 
+in an rpc this reques looks mostly like this
+tthey dont expect you to mmention any route like getTodos , getBalanmce
+the url remaions the same  , just the method inside the request changes 
+which does the job done
+
 this is the kind of body and kind of body we get will doing rpc
 notice that we are not putting any route there
 the url remains the same>
