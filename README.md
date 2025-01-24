@@ -70,6 +70,8 @@ message Person {
     int age  = 2;
 }
 
+//we create services here  , that states what all methods we would be calling in a rpc call and what does it return
+
 message personService {
     //add a person o the address bank >
     rpc AddPerson(person) returns (person);
@@ -91,6 +93,9 @@ this gets decoded to json as >
 }
 ....etc
 
+types in pbf >
+
+https://projects.100xdevs.com/tracks/grpc/grpc-5
 
 # grpc
 
