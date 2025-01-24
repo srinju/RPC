@@ -45,6 +45,53 @@ and that will get the job done
 the request body is a default json rpc format
 
 
+# proto buffs > (like json , xml ...etc)
+
+Protocol buffers are Google’s language-neutral, platform-neutral, extensible mechanism for serializing structured data – think XML, JSON.
+
+what proo buffs(pbf) does is that you can have your data sructure format(like json) in any forma
+it could be a sring a araray ..etc ..etc
+what pbf does is that it zips the size of the file to bwe very less
+
+in json forma the sereialisation and deserialisaion of he json forma is a expensive and requires high compue tha is y performance matrix is a quesion in normal node js processes
+
+json is very large size and also very expensicve , here pbfs solves the issue  , by zipping the size of the
+data files  , which makes the server fast and can do read and write operations very fast than a normal nodeJs server
+
+i is kind of similar to an openapispec file where you haeve to define how your daa is gonna loolk(schema) data a one place
+
+# a proto file looks like this >
+
+syntax = "proto3";
+
+message Person {
+    string name = 1; //we have this numbers stored as his file will get decoded and then encodeed
+    //so if somehing happens like one object moves up and one down and that would change the decoded message completely , unless they have a number atached to them
+    int age  = 2;
+}
+
+message personService {
+    //add a person o the address bank >
+    rpc AddPerson(person) returns (person);
+
+    //get a person from their name
+    rpc GetPersonByName(GePersonByNameReques) returns person;
+}
+
+message GetPersonalByNameRequest {
+    string name = 1;
+}
+
+
+this gets decoded to json as >
+
+{
+    "name" : 1,
+    "age" : 2
+}
+....etc
+
+
 # grpc
 
 
@@ -71,3 +118,4 @@ whereas he rpc is sending json while doing remoet procedure calls
 
 and grpc is compresssing the json format making the channel less dense and hence provide better performance
 between microservices in a vast application
+

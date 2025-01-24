@@ -44,3 +44,7 @@ app.post('/rpc', (req, res) => {
 app.listen(port, () => {
     console.log(`JSON-RPC server listening at http://localhost:${port}`);
 });
+
+//it would be good if we have a filt that has all the methods and we can create the backends 
+//with auto generaed code with ha file , and it can be used by other backends as well for a very high scaled application
+
