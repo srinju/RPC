@@ -28,6 +28,7 @@ in an rpc this reques looks mostly like this
 tthey dont expect you to mmention any route like getTodos , getBalanmce
 the url remaions the same  , just the method inside the request changes 
 which does the job done
+(NOTE THIS IS A DUMB JSON RPC IMPLEMENTATION)
 
 this is the kind of body and kind of body we get will doing rpc
 notice that we are not putting any route there
@@ -35,6 +36,13 @@ the url remains the same>
 in the body there is a jsonrpc that means it is doing a rpc call
 adn there is the method we wnat that is the getBalance , we want to get the balamce so in the rpc body we will pass the method
 and also in the params that is the argument we want to pass it to the other side 
+
+what really happens in a rpc server is that we write a file with all the method
+and a client/file like the dumb rpc server is automatically generaated 
+then we dont have to worry to send all four of the params , id , method , jsonrpc 
+then we can just do a const result  = await add();
+and that will get the job done
+the request body is a default json rpc format
 
 
 # grpc
@@ -54,3 +62,12 @@ and we can use smaller ec2 machines for grpc servers as they are very fsat and g
 
 so grpc lets you do remote procedure calls
 and it reduces the data transfer(proroBuffs) layer compressed
+
+trpc you can hove very strict types in both fronend and the backend where the data types are very
+strict so that in a place where there is multiple backends the data types dosent get mixed up
+and we are able to place them nicely
+
+whereas he rpc is sending json while doing remoet procedure calls
+
+and grpc is compresssing the json format making the channel less dense and hence provide better performance
+between microservices in a vast application

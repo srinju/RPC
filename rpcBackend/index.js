@@ -1,3 +1,5 @@
+//DUMB implementatioon of an json rpc implemenation
+
 const express = require('express');
 const bodyParser = require('body-parser');
 
@@ -23,6 +25,8 @@ app.post('/rpc', (req, res) => {
 
     // Execute the method
     let result;
+    //checks if the methid is add then performs the operation as per the operation function 
+    //if it is not that method return a defailt payload saying that thte method was not founde
     switch (method) {
         case 'add':
             result = add(params[0], params[1]);
